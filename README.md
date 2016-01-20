@@ -11,7 +11,7 @@ fork 版主要是去除了[@twlk28 的版本](https://github.com/duowan/lottery)
 
 ### 构造参数
 ```javascript
-var lottery = new Lottery({
+var fruitSlot = new FruitSlot({
     el: '#J_lottery1', // 抽奖容器元素，默认值`body`，页面有多个抽奖动画时，需指定
     lottoItem: '[data-lotto-item]', // 用来指定抽奖容器内的奖品元素，默认值`[data-lotto-item]`
     activeClass: 'lotto__item--hover' // 执行抽奖动画时切换的样式名，默认值`lotto__item--hover`
@@ -23,7 +23,7 @@ var lottery = new Lottery({
 /**
  * 开始抽奖
  */
-lottery.start();
+fruitSlot.start();
 
 /**
  * 停止抽奖
@@ -32,11 +32,11 @@ lottery.start();
  * @param  {Function} cb    动画停止后执行的回调函数
  * @param  {*}        ctx   回调函数的上下文
  */
-lottery.stop(index, cb, ctx);
+fruitSlot.stop(index, cb, ctx);
 ```
 
 ## 浏览器兼容性
-支持以下特性的浏览器都支持
+要使用该组件需要浏览器支持以下特性
 * Array.forEach ES5(IE9+才支持)
 * querySelector / querySelectorAll
 * classList
