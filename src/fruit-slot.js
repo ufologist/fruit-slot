@@ -1,13 +1,23 @@
-// [UMD](https://github.com/umdjs/umd)
+/**
+ * 经典水果机抽奖 JS 组件
+ *
+ * 用于9宫格/12宫格等格子似的抽奖表现形式
+ *
+ * @version 2.0.0 2016/1/20
+ * @author https://github.com/ufologist/fruit-slot
+ * @author https://github.com/duowan/lottery
+ * @license MIT
+ */
 (function webpackUniversalModuleDefinition(root, factory) {
+    // [UMD](https://github.com/umdjs/umd)
     if(typeof exports === 'object' && typeof module === 'object') {
         module.exports = factory();
     } else if(typeof define === 'function' && define.amd) {
         define([], factory);
     } else if(typeof exports === 'object') {
-        exports['Lottery'] = factory();
+        exports['FruitSlot'] = factory();
     } else {
-        root['Lottery'] = factory();
+        root['FruitSlot'] = factory();
     }
 })(this, function() {
     var STATUS_STARTING = 1, STATUS_STOPPING = 2, STATUS_STOPPED = 3,
@@ -81,7 +91,7 @@
         return arrDst
     }
 
-    function Lottery(opts) {
+    function FruitSlot(opts) {
         // 0. setup config
         var options = this.options = extend({}, defaults, opts)
         var arr = document.querySelector(options.el).querySelectorAll(options.lottoItem),
@@ -182,8 +192,8 @@
         }
     }
 
-    Lottery.prototype = {
-        constructor: Lottery,
+    FruitSlot.prototype = {
+        constructor: FruitSlot,
         /**
          * 开始抽奖
          */
@@ -210,5 +220,5 @@
         }
     };
 
-    return Lottery;
+    return FruitSlot;
 });

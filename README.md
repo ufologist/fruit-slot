@@ -1,6 +1,8 @@
-# N宫格抽奖
+# 经典水果机抽奖
 
-实现9宫格/12宫格等类似格子抽奖的 JS 组件 - 无依赖([UMD](https://github.com/umdjs/umd))版, 适用于全局使用或者作为 AMD 模块使用.
+用于9宫格/12宫格等格子似的抽奖表现形式.
+
+fork 版主要是去除了[@twlk28 的版本](https://github.com/duowan/lottery)中依赖的一些第三方库(例如: jQuery), 实现成无依赖([UMD](https://github.com/umdjs/umd))版, 适合作为一个很小的功能模块快速集成到项目中全局使用或作为 AMD 模块使用.
 
 ## Usage
 
@@ -30,5 +32,14 @@ lottery.start();
  * @param  {Function} cb    动画停止后执行的回调函数
  * @param  {*}        ctx   回调函数的上下文
  */
-lottery.stop(stopIndex, cb, ctx);
+lottery.stop(index, cb, ctx);
 ```
+
+## 浏览器兼容性
+支持以下特性的浏览器都支持
+* Array.forEach ES5(IE9+才支持)
+* querySelector / querySelectorAll
+* classList
+* getBoundingClientRect
+
+如果你需要兼容老版本的浏览器, 请使用 [@twlk28 的版本](https://github.com/duowan/lottery)
