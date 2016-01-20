@@ -1,1 +1,0 @@
-﻿seajs.use("gallery/jquery-plugin/jquery-migrate");
