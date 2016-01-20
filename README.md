@@ -1,4 +1,5 @@
 # 经典水果机抽奖
+![fruit-slot-classic](http://ufologist.github.io/fruit-slot/fruit-slot-classic.png)
 
 用于9宫格/12宫格等格子似的抽奖表现形式.
 
