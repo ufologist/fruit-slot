@@ -29,7 +29,7 @@ fruitSlot.start();
 /**
  * 停止抽奖
  * 
- * @param  {number}   index 表示动画停在哪个奖品序号，奖品序号按从0开始左上角顺时针排列
+ * @param  {number}   index 表示动画停在哪个奖品序号，奖品序号从0开始以左上角顺时针排列
  * @param  {Function} cb    动画停止后执行的回调函数
  * @param  {*}        ctx   回调函数的上下文
  */
