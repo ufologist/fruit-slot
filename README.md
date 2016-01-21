@@ -1,5 +1,5 @@
 # 经典水果机抽奖
-[fruit-slot.js](https://github.com/ufologist/fruit-slot/blob/master/src/fruit-slot.js)@2.1.0 2016/1/21
+[fruit-slot.js](https://github.com/ufologist/fruit-slot/blob/master/src/fruit-slot.js)@[2.1.0](https://github.com/ufologist/fruit-slot/blob/master/CHANGELOG.md)
 
 ![fruit-slot-classic](http://ufologist.github.io/fruit-slot/fruit-slot-classic.png)
 
