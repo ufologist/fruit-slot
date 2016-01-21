@@ -30,180 +30,145 @@
   <h1 class="entry-title">FruitSlot</h1>
   <div class="entry-content">
     <p>经典水果机抽奖</p>
+    <img src="fruit-slot-classic.png" alt="fruit-slot-classic" width="300" height="299">
 <hr>
 <h2 id="usage">Usage<a href="#usage" class="anchor">¶</a></h2>
+<!-- 水果机抽奖示例样式 -->
+<style>
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+.clearfix:after {
+    clear: both;
+}
 
-<div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"lotto"</span> <span class="attribute">id</span>=<span class="value">"J_lottery"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"lotto__list"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-lotto-item</span> <span class="attribute">class</span>=<span class="value">"lotto__item"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"lotto__img"</span> <span class="attribute">src</span>=<span class="value">"img/prize01.jpg"</span> <span class="attribute">alt</span>=<span class="value">""</span> &gt;</span>
-            <span class="tag">&lt;<span class="title">em</span> <span class="attribute">class</span>=<span class="value">"lotto__txt"</span>&gt;</span>1Y币<span class="tag">&lt;/<span class="title">em</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"lotto__border"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-lotto-item</span> <span class="attribute">class</span>=<span class="value">"lotto__item"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"lotto__img"</span> <span class="attribute">src</span>=<span class="value">"img/prize02.jpg"</span> <span class="attribute">alt</span>=<span class="value">""</span> &gt;</span>
-            <span class="tag">&lt;<span class="title">em</span> <span class="attribute">class</span>=<span class="value">"lotto__txt"</span>&gt;</span>LOL皮肤(199QB)<span class="tag">&lt;/<span class="title">em</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"lotto__border"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-lotto-item</span> <span class="attribute">class</span>=<span class="value">"lotto__item"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"lotto__img"</span> <span class="attribute">src</span>=<span class="value">"img/prize07.jpg"</span> <span class="attribute">alt</span>=<span class="value">""</span> &gt;</span>
-            <span class="tag">&lt;<span class="title">em</span> <span class="attribute">class</span>=<span class="value">"lotto__txt"</span>&gt;</span>YY熊一只<span class="tag">&lt;/<span class="title">em</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"lotto__border"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">data-lotto-item</span> <span class="attribute">class</span>=<span class="value">"lotto__item"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">img</span> <span class="attribute">class</span>=<span class="value">"lotto__img"</span> <span class="attribute">src</span>=<span class="value">"img/prize06.jpg"</span> <span class="attribute">alt</span>=<span class="value">""</span> &gt;</span>
-            <span class="tag">&lt;<span class="title">em</span> <span class="attribute">class</span>=<span class="value">"lotto__txt"</span>&gt;</span>谢谢参与<span class="tag">&lt;/<span class="title">em</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"lotto__border"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">a</span> <span class="attribute">id</span>=<span class="value">"J_start2"</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0);"</span> <span class="attribute">class</span>=<span class="value">"btn-start"</span>&gt;</span>START<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre></div><div class="highlight"><pre><code class="javascript">seajs.use([<span class="string">'/lottery/1.0.0/lottery'</span>,<span class="string">'gallery/jquery/1.10.2/jquery'</span>],<span class="function"><span class="keyword">function</span><span class="params">(Lottery, $)</span>{</span>
-    <span class="keyword">var</span> lot = <span class="keyword">new</span> Lottery({
-        el : <span class="string">"#J_lottery"</span>
-    })
-    $(<span class="string">'#J_start1'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span><span class="params">(e)</span>{</span>
-        e.preventDefault()
-        lot1.start()
-        setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-            lot1.stop(<span class="number">2</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-                console.log(<span class="number">123</span>)
-            })
-        },<span class="number">2000</span>)
-    })
-})</code></pre></div>
-
-  </div>
-
-  <style>
-  .clearfix:before,
-  .clearfix:after {
-      display: table;
-      content: " ";
-  }
-  .clearfix:after {
-      clear: both;
-  }
-
-  .lotto__list {
-      position: relative;
-      width: 592px;
-  }
-  .lotto__item,
-  .lotto__placeholder {
-      position: relative;
-      float: left; /* https://css-tricks.com/fighting-the-space-between-inline-block-elements/ */
-      text-align: center;
-  }
-  .lotto__placeholder {
-      width: 296px;
-      height: 102px;
-  }
-  .lotto__img {
-      width: 148px;
-      height: 102px;
-      vertical-align: middle;
-  }
-  .lotto__txt {
+.lotto__list {
+    position: relative;
+    width: 592px;
+}
+.lotto__item,
+.lotto__placeholder {
+    position: relative;
+    float: left; /* https://css-tricks.com/fighting-the-space-between-inline-block-elements/ */
+    text-align: center;
+}
+.lotto__placeholder {
+    width: 296px;
+    height: 102px;
+}
+.lotto__img {
+    width: 148px;
+    height: 102px;
+    vertical-align: middle;
+}
+.lotto__txt {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  line-height: 24px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #515151;
+}
+.lotto__border {
+    display: none;
     position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    line-height: 24px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #515151;
-  }
-  .lotto__border {
-      display: none;
-      position: absolute;
-      z-index: 1;
-      left: -3px;
-      top: -3px;
-      width: 148px;
-      height: 102px;
-      border: 3px solid #FE2441;
-  }
-  .lotto__item--hover .lotto__border {
-      display: block;
-  }
-  .btn-start {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 40%;
-      height: 40%;
-      font-size: 120%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%);
-  }
-  </style>
-  <div id="J_lottery1">
-      <div class="lotto__list clearfix">
-          <span data-lotto-item class="lotto__item">
-              <img class="lotto__img" src="http://zhanweitu.com/148/102/1Y%E5%B8%81" alt="1Y币" >
-              <em class="lotto__txt">0</em>
-              <div class="lotto__border"></div>
-          </span>
-          <span data-lotto-item class="lotto__item">
-              <img class="lotto__img" src="http://zhanweitu.com/148/102/2Y%E5%B8%81" alt="2Y币" >
-              <em class="lotto__txt">1</em>
-              <div class="lotto__border"></div>
-          </span>
-          <span data-lotto-item class="lotto__item">
-              <img class="lotto__img" src="http://zhanweitu.com/148/102/3Y%E5%B8%81" alt="3Y币" >
-              <em class="lotto__txt">2</em>
-              <div class="lotto__border"></div>
-          </span>
-          <span data-lotto-item class="lotto__item">
-              <img class="lotto__img" src="http://zhanweitu.com/148/102/%E8%B0%A2%E8%B0%A2" alt="谢谢参与" >
-              <em class="lotto__txt">3</em>
-              <div class="lotto__border"></div>
-          </span>
-          <span data-lotto-item class="lotto__item">
-              <img class="lotto__img" src="http://zhanweitu.com/148/102/4Y%E5%B8%81" alt="4Y币" >
-              <em class="lotto__txt">11</em>
-              <div class="lotto__border"></div>
-          </span>
-          <div class="lotto__placeholder"></div>
-          <span data-lotto-item class="lotto__item">
-              <img class="lotto__img" src="http://zhanweitu.com/148/102/5Y%E5%B8%81" alt="5Y币" >
-              <em class="lotto__txt">4</em>
-              <div class="lotto__border"></div>
-          </span>
-          <span data-lotto-item class="lotto__item">
-              <img class="lotto__img" src="http://zhanweitu.com/148/102/6Y%E5%B8%81" alt="6Y币" >
-              <em class="lotto__txt">10</em>
-              <div class="lotto__border"></div>
-          </span>
-          <div class="lotto__placeholder"></div>
-          <span data-lotto-item class="lotto__item">
-              <img class="lotto__img" src="http://zhanweitu.com/148/102/7Y%E5%B8%81" alt="7Y币" >
-              <em class="lotto__txt">5</em>
-              <div class="lotto__border"></div>
-          </span>
-          <span data-lotto-item class="lotto__item">
-              <img class="lotto__img" src="http://zhanweitu.com/148/102/%E8%B0%A2%E8%B0%A2" alt="谢谢参与" >
-              <em class="lotto__txt">9</em>
-              <div class="lotto__border"></div>
-          </span>
-          <span data-lotto-item class="lotto__item">
-              <img class="lotto__img" src="http://zhanweitu.com/148/102/8Y%E5%B8%81" alt="8Y币" >
-              <em class="lotto__txt">8</em>
-              <div class="lotto__border"></div>
-          </span>
-          <span data-lotto-item class="lotto__item">
-              <img class="lotto__img" src="http://zhanweitu.com/148/102/9Y%E5%B8%81" alt="9Y币" >
-              <em class="lotto__txt">7</em>
-              <div class="lotto__border"></div>
-          </span>
-          <span data-lotto-item class="lotto__item">
-              <img class="lotto__img" src="http://zhanweitu.com/148/102/10Y%E5%B8%81" alt="10Y币" >
-              <em class="lotto__txt">6</em>
-              <div class="lotto__border"></div>
-          </span>
-          <button class="btn-start">START</button>
-      </div>
+    z-index: 1;
+    left: -3px;
+    top: -3px;
+    width: 148px;
+    height: 102px;
+    border: 3px solid #FE2441;
+}
+.lotto__item--hover .lotto__border {
+    display: block;
+}
+.btn-start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 40%;
+    font-size: 120%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+</style>
+<!-- 水果机抽奖 DOM 结构 -->
+<div id="J_lottery1">
+    <div class="lotto__list clearfix">
+        <span data-lotto-item class="lotto__item">
+            <img class="lotto__img" src="http://zhanweitu.com/148/102/1Y%E5%B8%81" alt="1Y币" >
+            <em class="lotto__txt">0</em>
+            <div class="lotto__border"></div>
+        </span>
+        <span data-lotto-item class="lotto__item">
+            <img class="lotto__img" src="http://zhanweitu.com/148/102/2Y%E5%B8%81" alt="2Y币" >
+            <em class="lotto__txt">1</em>
+            <div class="lotto__border"></div>
+        </span>
+        <span data-lotto-item class="lotto__item">
+            <img class="lotto__img" src="http://zhanweitu.com/148/102/3Y%E5%B8%81" alt="3Y币" >
+            <em class="lotto__txt">2</em>
+            <div class="lotto__border"></div>
+        </span>
+        <span data-lotto-item class="lotto__item">
+            <img class="lotto__img" src="http://zhanweitu.com/148/102/%E8%B0%A2%E8%B0%A2" alt="谢谢参与" >
+            <em class="lotto__txt">3</em>
+            <div class="lotto__border"></div>
+        </span>
+        <span data-lotto-item class="lotto__item">
+            <img class="lotto__img" src="http://zhanweitu.com/148/102/4Y%E5%B8%81" alt="4Y币" >
+            <em class="lotto__txt">11</em>
+            <div class="lotto__border"></div>
+        </span>
+        <div class="lotto__placeholder"></div>
+        <span data-lotto-item class="lotto__item">
+            <img class="lotto__img" src="http://zhanweitu.com/148/102/5Y%E5%B8%81" alt="5Y币" >
+            <em class="lotto__txt">4</em>
+            <div class="lotto__border"></div>
+        </span>
+        <span data-lotto-item class="lotto__item">
+            <img class="lotto__img" src="http://zhanweitu.com/148/102/6Y%E5%B8%81" alt="6Y币" >
+            <em class="lotto__txt">10</em>
+            <div class="lotto__border"></div>
+        </span>
+        <div class="lotto__placeholder"></div>
+        <span data-lotto-item class="lotto__item">
+            <img class="lotto__img" src="http://zhanweitu.com/148/102/7Y%E5%B8%81" alt="7Y币" >
+            <em class="lotto__txt">5</em>
+            <div class="lotto__border"></div>
+        </span>
+        <span data-lotto-item class="lotto__item">
+            <img class="lotto__img" src="http://zhanweitu.com/148/102/%E8%B0%A2%E8%B0%A2" alt="谢谢参与" >
+            <em class="lotto__txt">9</em>
+            <div class="lotto__border"></div>
+        </span>
+        <span data-lotto-item class="lotto__item">
+            <img class="lotto__img" src="http://zhanweitu.com/148/102/8Y%E5%B8%81" alt="8Y币" >
+            <em class="lotto__txt">8</em>
+            <div class="lotto__border"></div>
+        </span>
+        <span data-lotto-item class="lotto__item">
+            <img class="lotto__img" src="http://zhanweitu.com/148/102/9Y%E5%B8%81" alt="9Y币" >
+            <em class="lotto__txt">7</em>
+            <div class="lotto__border"></div>
+        </span>
+        <span data-lotto-item class="lotto__item">
+            <img class="lotto__img" src="http://zhanweitu.com/148/102/10Y%E5%B8%81" alt="10Y币" >
+            <em class="lotto__txt">6</em>
+            <div class="lotto__border"></div>
+        </span>
+        <button class="btn-start">START</button>
+    </div>
+</div>
+
   </div>
+
+
 
 </article>
 </div>
@@ -219,8 +184,8 @@
       </footer>
     </div>
     <script src="http://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
-    <script src="./static/js/site.js"></script>
     <script src="https://rawgit.com/ufologist/lottery/master/src/fruit-slot.js"></script>
+    <!-- 水果机抽奖调用示例 -->
     <script>
     function createFruitSlot(selector) {
         var fruitSlot = new FruitSlot({
@@ -228,14 +193,16 @@
             lottoItem: '[data-lotto-item]',
             activeClass: 'lotto__item--hover'
         });
+        var lottoItemLength = document.querySelector(selector).querySelectorAll('[data-lotto-item]').length;
+
         document.querySelector(selector).querySelector('.btn-start').addEventListener('click', function(event) {
             fruitSlot.start();
 
             // 假装我们异步请求接口数据获取抽奖结果
             setTimeout(function() {
-                var stopIndex = Math.floor(Math.random() * 8);
+                var stopIndex = Math.floor(Math.random() * lottoItemLength);
                 fruitSlot.stop(stopIndex, function() {
-                    console.log('抽奖结果', stopIndex);
+                  alert('恭喜你抽中奖品: ' + selector + ':' + stopIndex);
                 });
             }, 2000);
         }, false);

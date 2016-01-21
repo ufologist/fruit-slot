@@ -74,6 +74,7 @@
 <body>
     <h1>经典水果机(格子)抽奖 JS 组件示例 <small><a target="_blank" href="https://github.com/ufologist/fruit-slot">fruit-slot</a></small> </h1>
     <p>组件没有依赖任何样式, 可自由发挥, 示例仅提供了最基础的样式结构以供参考</p>
+    <p>以下示例仅布局不一样, 调用方式都是一样的</p>
     <h2>12宫格</h2>
     <div id="J_lottery1">
         <div class="lotto__list clearfix">
@@ -202,6 +203,81 @@
             <button class="btn-start">START</button>
         </div>
     </div>
+
+    <h2>横排抽奖</h2>
+    <style>
+    #J_lottery3 .btn-start {
+        left: 115%;
+        width: 25%;
+        height: 100%;
+    }
+    </style>
+    <div id="J_lottery3">
+        <div class="lotto__list clearfix">
+            <div data-lotto-item class="lotto__item">
+                <img class="lotto__img" src="http://zhanweitu.com/148/102/1Y%E5%B8%81" alt="1Y币" >
+                <em class="lotto__txt">0</em>
+                <div class="lotto__border"></div>
+            </div>
+            <div data-lotto-item class="lotto__item">
+                <img class="lotto__img" src="http://zhanweitu.com/148/102/2Y%E5%B8%81" alt="2Y币" >
+                <em class="lotto__txt">1</em>
+                <div class="lotto__border"></div>
+            </div>
+            <div data-lotto-item class="lotto__item">
+                <img class="lotto__img" src="http://zhanweitu.com/148/102/3Y%E5%B8%81" alt="3Y币" >
+                <em class="lotto__txt">2</em>
+                <div class="lotto__border"></div>
+            </div>
+            <div data-lotto-item class="lotto__item">
+                <img class="lotto__img" src="http://zhanweitu.com/148/102/%E8%B0%A2%E8%B0%A2" alt="谢谢参与" >
+                <em class="lotto__txt">3</em>
+                <div class="lotto__border"></div>
+            </div>
+            <button class="btn-start">START</button>
+        </div>
+    </div>
+
+    <h2>竖排抽奖</h2>
+    <style>
+    #J_lottery4 .lotto__list {
+        width: 148px;
+    }
+    #J_lottery4 .lotto__item {
+        float: none;
+    }
+    #J_lottery4 .btn-start {
+        left: 160%;
+        width: 100%;
+        height: 25%;
+    }
+    </style>
+    <div id="J_lottery4">
+        <div class="lotto__list clearfix">
+            <div data-lotto-item class="lotto__item">
+                <img class="lotto__img" src="http://zhanweitu.com/148/102/1Y%E5%B8%81" alt="1Y币" >
+                <em class="lotto__txt">0</em>
+                <div class="lotto__border"></div>
+            </div>
+            <div data-lotto-item class="lotto__item">
+                <img class="lotto__img" src="http://zhanweitu.com/148/102/2Y%E5%B8%81" alt="2Y币" >
+                <em class="lotto__txt">1</em>
+                <div class="lotto__border"></div>
+            </div>
+            <div data-lotto-item class="lotto__item">
+                <img class="lotto__img" src="http://zhanweitu.com/148/102/3Y%E5%B8%81" alt="3Y币" >
+                <em class="lotto__txt">2</em>
+                <div class="lotto__border"></div>
+            </div>
+            <div data-lotto-item class="lotto__item">
+                <img class="lotto__img" src="http://zhanweitu.com/148/102/%E8%B0%A2%E8%B0%A2" alt="谢谢参与" >
+                <em class="lotto__txt">3</em>
+                <div class="lotto__border"></div>
+            </div>
+            <button class="btn-start">START</button>
+        </div>
+    </div>
+
     <script src="https://rawgit.com/ufologist/lottery/master/src/fruit-slot.js"></script>
     <script>
     function createFruitSlot(selector) {
@@ -210,14 +286,17 @@
             lottoItem: '[data-lotto-item]',
             activeClass: 'lotto__item--hover'
         });
+
+        var lottoItemLength = document.querySelector(selector).querySelectorAll('[data-lotto-item]').length;
+
         document.querySelector(selector).querySelector('.btn-start').addEventListener('click', function(event) {
             fruitSlot.start();
 
             // 假装我们异步请求接口数据获取抽奖结果
             setTimeout(function() {
-                var stopIndex = Math.floor(Math.random() * 8);
+                var stopIndex = Math.floor(Math.random() * lottoItemLength);
                 fruitSlot.stop(stopIndex, function() {
-                    console.log('抽奖结果', stopIndex);
+                    console.log('抽奖结果', selector, stopIndex);
                 });
             }, 2000);
         }, false);
@@ -225,6 +304,8 @@
 
     createFruitSlot('#J_lottery1');
     createFruitSlot('#J_lottery2');
+    createFruitSlot('#J_lottery3');
+    createFruitSlot('#J_lottery4');
     </script>
 </body>
 </html>
