@@ -6,7 +6,7 @@
 fork 后去除了[@twlk28 版本](https://github.com/duowan/lottery)中依赖的第三方库(例如: jQuery). 现在是无依赖([UMD](https://github.com/umdjs/umd))版, 适合作为一个很小的功能模块集成到项目中全局使用或作为 AMD/CMD 模块使用.
 
 ## Usage
-
+组件本身只提供了抽奖的逻辑处理, 具体的抽奖样式, 可以自己任意发挥, 具体使用方法请参考[演示示例](http://ufologist.github.io/fruit-slot)
 
 ## Api
 
