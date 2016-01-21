@@ -47,3 +47,31 @@ fruitSlot.stop(index, cb, ctx);
 * getBoundingClientRect
 
 如果你需要兼容老版本的浏览器, 请使用 [@twlk28 的版本](https://github.com/duowan/lottery)
+
+## 可供参考的其他项目
+* [roulette.js](https://github.com/akira-kuriyama/roulette.js) Rotate image like a roulette game 用于老虎机
+* [druphliu/Lottery](https://github.com/druphliu/Lottery) 经典水果机
+* [chenyueling/lottery](https://github.com/chenyueling/lottery) 数字老虎机
+
+    通过 repeat-y/background-position-y 来实现滚动
+    因此可以使用 transition 来实现滚动的效果
+    ```javascript
+    // http://easings.net/zh-cn#easeInOutCirc
+    $('.num').eq(0).css({
+      'transition': 'background-position-y 6s 0s cubic-bezier(0.785, 0.135, 0.15, 0.86)',
+      'background-position-y': '12792px'
+    });
+    $('.num').eq(1).css({
+      'transition': 'background-position-y 9s 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86)',
+      'background-position-y': '11726px'
+    });
+    $('.num').eq(2).css({
+      'transition': 'background-position-y 12s 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86)',
+      'background-position-y': '11512px'
+    });
+    ```
+
+* [比较常用的几种抽奖效果](https://github.com/areyouse7en/lottery) 跑马灯 扑克牌翻转
+* [大转盘](https://github.com/LucyLiuluxi/lottery)
+* [移动端抽奖插件[大转盘，老虎机，刮刮卡]](https://github.com/TOP-Chao/lottery)
+* [Github](https://github.com/search?utf8=%E2%9C%93&q=lottery)
