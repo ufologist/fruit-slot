@@ -1,4 +1,6 @@
 # 经典水果机抽奖
+fruit-slot.js@2.1.0 2016/1/21
+
 ![fruit-slot-classic](http://ufologist.github.io/fruit-slot/fruit-slot-classic.png)
 
 用于9宫格/12宫格等格子似的抽奖表现形式.
