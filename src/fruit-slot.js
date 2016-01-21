@@ -3,7 +3,7 @@
  *
  * 用于9宫格/12宫格等格子似的抽奖表现形式
  *
- * @version 2.0.0 2016/1/20
+ * @version 2.1.0 2016/1/21
  * @author https://github.com/ufologist/fruit-slot
  * @author https://github.com/duowan/lottery
  * @license MIT
@@ -95,7 +95,13 @@
         // 0. setup config
         var options = this.options = extend({}, defaults, opts)
         var arr = document.querySelector(options.el).querySelectorAll(options.lottoItem),
-            lottoArr = _createCycleArr(arr), //格子们顺时针排好队
+            // 格子们默认顺时针排好队,
+            // 也可以直接传入奖品元素列表(那么顺序完全由用户来控制)
+            // 例如自己按逆时针放置好所有元素, 也可以支持双横排或者双竖排这样的特殊排列布局
+            // 这样就可以随心所欲的布局和控制奖品元素的动画了
+            // 思考出这种模式主要是受到 https://github.com/areyouse7en/lottery/blob/master/js/lottery.marquee.js
+            // 的启发, 还可以参考其基于缓动函数来实现动画的逻辑
+            lottoArr = options.lottoArr ? options.lottoArr : _createCycleArr(arr),
             activeClass = options.activeClass,
             finished = false, //一轮游戏结束转动标志 
             step = 0, //一轮游戏的计步数

@@ -15,7 +15,8 @@ fork 后去除了[@twlk28 版本](https://github.com/duowan/lottery)中依赖的
 var fruitSlot = new FruitSlot({
     el: '#J_lottery1', // 抽奖容器元素，默认值 body，页面有多个抽奖动画时，需指定
     lottoItem: '[data-lotto-item]', // 用来指定抽奖容器内的奖品元素，默认值 [data-lotto-item]
-    activeClass: 'lotto__item--hover' // 执行抽奖动画时切换的样式名，默认值 lotto__item--hover
+    activeClass: 'lotto__item--hover', // 执行抽奖动画时切换的样式名，默认值 lotto__item--hover
+    lottoArr: lottoArr // 手工指定奖品元素的顺序, 例如想将默认的顺时针元素排列改为逆时针排列, 只要你控制了元素的顺序就控制了抽奖动画执行的顺序
 });
 ```
 
