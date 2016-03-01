@@ -72,6 +72,6 @@ fruitSlot.stop(index, cb, ctx);
     ```
 
 * [比较常用的几种抽奖效果](https://github.com/areyouse7en/lottery) 跑马灯 扑克牌翻转
-* [大转盘](https://github.com/LucyLiuluxi/lottery)
+* [大转盘](https://github.com/LucyLiuluxi/lottery) / [CSS大转盘](http://monine.github.io/study/public/lottery_dzp.html)
 * [移动端抽奖插件[大转盘，老虎机，刮刮卡]](https://github.com/TOP-Chao/lottery)
 * [Github](https://github.com/search?utf8=%E2%9C%93&q=lottery)
